@@ -1,25 +1,46 @@
 import { CriminalHTML } from './Criminal.js'
 import { getCriminals, useCriminals } from './CriminalDataProvider.js'
 
-export const CriminalList = () => {
-    getCriminals().then(() => {
-        const criminalArray = useCriminals();
-        console.log("criminalArray", criminalArray)
-        addCriminalsToDom(criminalArray);
-    }
-        /*
-            Now that you have the data, what
-            component should be rendered?
-        */
-    )
-}
-const addCriminalsToDom = (anArrayOfCriminals) => {
-    const domElement = document.querySelector(".criminalsContainer");
+const eventHub = document.querySelector(".container")
+const contentTarget = document.querySelector(".criminalsContainer")
 
-    let HTMLArray = anArrayOfCriminals.map(singleCriminal => {
+// Listen for the custom event you dispatched in ConvictionSelect
+eventHub.addEventListener('crimeChosen', event => {
+    // You remembered to add the id of the crime to the event detail, right?
+    if (event.detail.crimeThatWasChosen !== "0") {
+        /*
+            Filter the criminals application state down to the people that committed the crime
+        */
+        debugger
+        const matchingCriminals = useCriminals().filter(currentCriminal => {
+            return currentCriminal.conviction === event.detail.crimeThatWasChosen
+
+
+        })
+
+        /*
+            Then invoke render() and pass the filtered collection as
+            an argument
+        Put addCriminalsToDom function here instead of render function */
+        addToDom(matchingCriminals)
+    }
+})
+const addToDom = (criminalCollection) => {
+
+    let HTMLArray = criminalCollection.map(singleCriminal => {
         return CriminalHTML(singleCriminal);
     })
-    //console.log("HTMLArray", HTMLArray);
-
-    domElement.innerHTML = HTMLArray.join("")
+    contentTarget.innerHTML = HTMLArray.join("")
 }
+
+
+
+// Render ALL criminals initally
+export const CriminalList = () => {
+    getCriminals()
+        .then(() => {
+            const appStateCriminals = useCriminals()
+            addToDom(appStateCriminals)
+        })
+}
+

@@ -1,0 +1,3 @@
+/*
+Take notes made and prepare them to be displayed in html
+*/

@@ -8,6 +8,7 @@ export const CriminalHTML = (criminalObj) => {
             <li>Crime: ${criminalObj.conviction}</li>
             <li>Term start: ${new Date(criminalObj.incarceration.start).toLocaleDateString('en-US')}</li>
             <li>Term end: ${new Date(criminalObj.incarceration.end).toLocaleDateString('en-US')}</li>
+            
         
     </section>
     `

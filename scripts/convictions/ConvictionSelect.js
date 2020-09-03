@@ -21,10 +21,28 @@ eventHub.addEventListener("change", event => {
         })
         console.log(event)
         // Dispatch to event hub
-        debugger
+
         eventHub.dispatchEvent(crimeChosenEvent)
     }
 })
+
+eventHub.addEventListener("change", event => {
+
+    // Only do this if the `crimeSelect` element was changed
+    if (event.target.id === "officerSelect") {
+        // Create custom event. Provide an appropriate name.
+        const officerChosenEvent = new CustomEvent("officerChosen", {
+            detail: {
+                officerThatWasChosen: event.target.value
+            }
+        })
+        console.log(event)
+        // Dispatch to event hub
+
+        eventHub.dispatchEvent(officerChosenEvent)
+    }
+})
+
 
 
 const render = convictionsCollection => {

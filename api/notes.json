@@ -5,6 +5,12 @@
       "date": "Sept 2",
       "suspect": "Tom Cat",
       "id": 2
+    },
+    {
+      "noteText": "Here is a new note.",
+      "suspect": "Nathanael Champlin",
+      "date": 1599242772433,
+      "id": 3
     }
   ]
 }

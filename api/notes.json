@@ -1,16 +1,10 @@
 {
-    "notes": [
-        {
-            "noteText": "I Love to Post Notes",
-            "date": "Sept 2",
-            "suspect": "Tom Cat",
-            "id": 2
-        },
-        {
-            "noteText": "I Love to Post Notes",
-            "date": "Sept 3",
-            "suspect": "Jerry Mouse",
-            "id": 3
-        }
-    ]
+  "notes": [
+    {
+      "noteText": "I Love to Post Notes",
+      "date": "Sept 2",
+      "suspect": "Tom Cat",
+      "id": 2
+    }
+  ]
 }

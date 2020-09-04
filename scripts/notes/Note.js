@@ -7,10 +7,10 @@ Take notes made and prepare them to be displayed in html
 
 export const NoteHTMLConverter = (noteObj) => {
     return `
-        <section class="note">
+    <p><section class="note">
             <div class="note--title">Criminal: ${ noteObj.suspect}</div>
             <div class="note--content">${ noteObj.noteText}</div>
             <div class="note--timestamp">Timestamp: ${ new Date(noteObj.date).toLocaleDateString('en-US')}</div>
-        </section>
+        </section></p>
     `
 }

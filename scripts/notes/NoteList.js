@@ -2,13 +2,11 @@
 
 import { getNotes, useNotes } from "./NoteProvider.js";
 import { NoteHTMLConverter } from "./Note.js";
-import { useCriminals } from "../criminals/CriminalDataProvider.js";
 
 const contentTarget = document.querySelector(".noteListContainer")
 const eventHub = document.querySelector(".container")
 
 const render = (notes) => {
-    const criminals = useCriminals()
     contentTarget.innerHTML = notes.map((noteObject) => {
         return NoteHTMLConverter(noteObject)
     }).join("");

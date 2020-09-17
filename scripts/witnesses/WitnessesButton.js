@@ -1,12 +1,8 @@
-/*
-A bunch of input boxes related to the not information
-*/
+import { getWitnesses, useWitnesses } from "./WitnessProvider.js"
 
-import { getCriminals, useCriminals } from "../criminals/CriminalDataProvider.js"
-import { saveNote } from "./NoteProvider.js"
 
 const eventHub = document.querySelector(".container");
-const contentTarget = document.querySelector(".noteFormContainer");
+const contentTarget = document.querySelector(".filters__witnesses");
 
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveNote") {
@@ -31,20 +27,11 @@ eventHub.addEventListener("click", clickEvent => {
     }
 })
 
-const render = (criminalArray) => {
+const render = () => {
     contentTarget.innerHTML = `
        <h3>Add a Note</h3>
        <div>
-		    
-		        <select class="dropdown" id="noteForm--criminal">
-			            <option value="0">Please select a criminal...</option>
-			            ${criminalArray.map(criminalObj => {
-        return `<option value="${criminalObj.id}">${criminalObj.name}</option>`
-    }).join("")
-        }
-                </select>
-                <textarea id="noteForm--text" placeholder="Put a note here"></textarea>
-                <button id="saveNote">Save Note</button>
+                <button id="statements">Witness Statements</button>
             </div>
     `
 }

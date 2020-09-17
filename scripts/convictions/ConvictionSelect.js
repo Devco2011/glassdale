@@ -1,4 +1,3 @@
-console.log("Hello there")
 import { getConvictions, useConvictions } from "./ConvictionProvider.js"
 
 /*
@@ -49,11 +48,10 @@ const render = convictionsCollection => {
     contentTarget.innerHTML = `
     <select class="dropdown" id="crimeSelect">
         <option value="0">Please select a crime...</option>
-        ${
-        convictionsCollection.map(convictionObj => {
-            const crime = convictionObj.name
-            return `<option value=${crime}>${crime}</option>`
-        })
+        ${convictionsCollection.map(convictionObj => {
+        const crime = convictionObj.name
+        return `<option value=${crime}>${crime}</option>`
+    })
         }
     </select>
 `

@@ -1,22 +1,10 @@
 {
   "notes": [
     {
-      "noteText": "I Love to Post Notes",
-      "date": "Sept 2",
-      "suspect": "Tom Cat",
-      "id": 2
-    },
-    {
-      "noteText": "Here is a new note.",
-      "suspect": "Nathanael Champlin",
-      "date": 1599242772433,
-      "id": 3
-    },
-    {
-      "noteText": "This criminal loves jello.",
-      "suspect": "Cary Bauch",
-      "date": 1599580781895,
-      "id": 4
+      "noteText": "Here is a note",
+      "suspectId": 1,
+      "date": 1600356806418,
+      "id": 1
     }
   ]
 }

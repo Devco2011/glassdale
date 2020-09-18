@@ -41,5 +41,6 @@ export const NoteForm = () => {
         .then(() => {
             render(useCriminals());
         })
+    eventHub.dispatchEvent(officerChosenEvent)
 
 }

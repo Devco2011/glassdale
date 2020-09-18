@@ -41,3 +41,8 @@ export const saveNote = noteObj => {
         })
         .then(dispatchStateChangeEvent)
 }
+// button click
+// To delete: reference a specific note by id
+// Remove from api
+// get all notes 
+// display notes

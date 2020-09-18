@@ -13,6 +13,7 @@ const render = (notes, suspects) => {
         noteObject.suspectObj = suspects.find(suspect => {
             return suspect.id === parseInt(noteObject.suspectId)
         })
+
         return NoteHTMLConverter(noteObject)
     }).join("");
 }
@@ -26,12 +27,16 @@ export const NoteList = () => {
             render(notes, suspects)
 
         })
-
-
-
-    eventHub.addEventListener("noteStateChanged", () => {
-        const newNotes = useNotes()
-        render(newNotes, useCriminals)
-    })
 }
+
+
+
+eventHub.addEventListener("noteStateChanged", () => {
+    const newNotes = useNotes()
+    render(newNotes, useCriminals())
+
+})
+
+
+
 

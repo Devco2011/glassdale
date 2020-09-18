@@ -3,12 +3,6 @@
     {
       "noteText": "Here is a note",
       "suspectId": 1,
-      "date": 1600356806418,
-      "id": 1
-    },
-    {
-      "noteText": "Here is a note",
-      "suspectId": 1,
       "date": 1600441342161,
       "id": 2
     },
@@ -17,12 +11,6 @@
       "suspectId": 1,
       "date": 1600442507999,
       "id": 3
-    },
-    {
-      "noteText": "this is yet one more note",
-      "suspectId": 5,
-      "date": 1600442580461,
-      "id": 4
     }
   ]
 }

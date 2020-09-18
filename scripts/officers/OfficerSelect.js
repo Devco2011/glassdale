@@ -31,11 +31,10 @@ const render = officersCollection => {
     contentTarget.innerHTML = `
     <select class="dropdown" id="officerSelect">
         <option value="0">Please select an officer...</option>
-        ${
-        officersCollection.map(officerObj => {
-            const officer = officerObj.name
-            return `<option value="${officer}">${officer}</option>`
-        })
+        ${officersCollection.map(officerObj => {
+        const officer = officerObj.name
+        return `<option value="${officer}">${officer}</option>`
+    })
         }
     </select>
 `
